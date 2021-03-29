@@ -10002,7 +10002,20 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.table tr {
+  text-align: center;
+}
+
 .table td {
   text-align: center;
   vertical-align: middle;
+}
+
+.post {
+  width: 300px;
+}
+
+.table td ul {
+  width: 100%;
+  list-style-type: none;
 }

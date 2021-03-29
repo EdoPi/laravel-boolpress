@@ -11,7 +11,7 @@
             <th scope="col">Bio</th>
             <th scope="col">Picture</th>
             <th scope="col">WebSite</th>
-            <th scope="col">Posts</th>
+            <th class="post" scope="col">Posts</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -27,7 +27,7 @@
                 <td>
                     <ul>
                         @foreach ($author->posts as $key => $item)
-                        <li><a href="/posts/{{$key+1}}">{{$item->title}}</a></li>
+                        <li style="text-align: left"><a style="font-size: 10px" href="/posts/{{$key+1}}">{{$item->title}}</a></li>
                         @endforeach
 
                     </ul>
