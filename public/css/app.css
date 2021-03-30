@@ -10019,3 +10019,9 @@ h3 {
   width: 100%;
   list-style-type: none;
 }
+
+.myform-container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+}
