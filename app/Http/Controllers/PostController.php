@@ -41,6 +41,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        $path = $request->file('picture')->store('images');
+
+
         $data = $request->all();
         $author_id = $data['author_id'];
         if (!Author::find($author_id)) {
@@ -48,8 +52,8 @@ class PostController extends Controller
         }
         $post = new Post();
         $post->fill($data);
+        $post->img = $path;
         $post->save();
-
         $post->tags()->attach($data['tags']);
 
         return redirect()->route('posts.index');

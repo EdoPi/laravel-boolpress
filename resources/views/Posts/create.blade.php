@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="myform-container">
-    <form class="needs-validation" action="{{route('posts.store')}}" method="post" novalidate>
+    <form class="needs-validation" action="{{route('posts.store')}}" method="post"  enctype="multipart/form-data" novalidate>
         @csrf
         @method('POST')
         <div class="form-group">
@@ -29,6 +29,10 @@
               @endforeach
             </select>
           </div>
+        <div class="form-group my-form">
+            <label for="picture">Title</label>
+            <input  class="form-control" type="file" name="picture" value="" >
+        </div>
         <button class="btn btn-primary" type="submit" value="Invia">Invia</button>
     </form>
 </div>
