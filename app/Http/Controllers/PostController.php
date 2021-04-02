@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CreatedPostMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Author;
@@ -55,6 +57,7 @@ class PostController extends Controller
         $post->img = $path;
         $post->save();
         $post->tags()->attach($data['tags']);
+        Mail::to('mail@mail.it')->send(new CreatedPostMail($post));
 
         return redirect()->route('posts.index');
 
